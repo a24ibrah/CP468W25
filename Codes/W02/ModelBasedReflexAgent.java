@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 class ModelBasedReflexAgent {
-    private String currentState; // Current state of the environment
+    private String currentState; // The agent's current understanding of the environment
     private Map<String, String> rules; // Condition-action rules
     // Map: Stores elements in an unordered fashion. It maps keys to values.
 
@@ -42,6 +42,10 @@ class ModelBasedReflexAgent {
     }
 
     public static void main(String[] args) {
+        
+        /* State-Based Behavior: The agent updates its internal 
+        currentState based on the percept it receives (perceive method).*/
+        
         ModelBasedReflexAgent agent = new ModelBasedReflexAgent();
 
         // Simulating the agent perceiving different states
@@ -53,3 +57,11 @@ class ModelBasedReflexAgent {
         }
     }
 }
+/*Limitations
+No Long-Term Memory: The agent only remembers the latest percept. 
+It does not retain a history of past states or actions, 
+so it cannot handle situations requiring sequential reasoning.
+
+Static Rules: The agent's decision-making is limited to the predefined 
+condition-action rules in the rules map. 
+It cannot learn or adapt to new situations dynamically. */

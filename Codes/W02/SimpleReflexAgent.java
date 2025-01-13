@@ -1,3 +1,7 @@
+/*
+ * An example of a simple reflex agent that uses a switch expression 
+ * to define the condition-action rules.
+ */
 class SimpleReflexAgent {
     public SimpleReflexAgent() {
         // No state needed for a stateless agent
