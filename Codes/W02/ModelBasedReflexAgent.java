@@ -4,6 +4,7 @@ import java.util.Map;
 class ModelBasedReflexAgent {
     private String currentState; // Current state of the environment
     private Map<String, String> rules; // Condition-action rules
+    // Map: Stores elements in an unordered fashion. It maps keys to values.
 
     public ModelBasedReflexAgent() {
         currentState = "clean"; // Initial state

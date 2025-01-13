@@ -1,22 +1,13 @@
 class SimpleReflexAgent {
-    private String state;  // Current state of the environment
-
     public SimpleReflexAgent() {
-        this.state = null;  // Initialize state
+        // No state needed for a stateless agent
     }
 
-    public void perceive(String percept) {
-        /** 
-         * Interprets the current percept and updates the state.
-         */
-        this.state = percept;
-    }
-
-    public String rules() {
+    public String rules(String percept) {
         /** 
          * Defines the condition-action rules for the agent using a switch expression.
          */
-        return switch (this.state) {
+        return switch (percept) {
             case "dirty" -> "clean";
             case "obstacle" -> "move_around";
             case "empty" -> "do_nothing";
@@ -24,12 +15,12 @@ class SimpleReflexAgent {
         };
     }
 
-    public void act() {
+    public void act(String percept) {
         /** 
-         * Executes the action based on the current state.
+         * Executes the action based on the current percept.
          */
-        String action = rules();
-        System.out.println("Action taken: " + action);
+        String action = rules(percept);
+        System.out.println("Perceived: " + percept + " -> Action taken: " + action);
     }
 
     public static void main(String[] args) {
@@ -39,8 +30,7 @@ class SimpleReflexAgent {
         String[] percepts = {"dirty", "obstacle", "empty"};
 
         for (String percept : percepts) {
-            agent.perceive(percept);
-            agent.act();
+            agent.act(percept); // Pass the percept directly
         }
     }
 }
